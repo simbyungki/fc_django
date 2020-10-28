@@ -1,0 +1,23 @@
+{% extends 'fcuser/base.html' %}
+
+{% block contents %}
+<div class="row mt-5">
+	<div class="col-12 text-center">
+		<h1>메인</h1>
+	</div>
+</div>
+<div class="row mt-5">
+	<div class="col-12">
+		{% if user_id %}
+		<p>{{ user_id }}님, 환영합니다!</p>
+		{% else %}
+		<p>환영합니다!</p>
+		{% endif %}
+	</div>
+	{% if user_id %}
+	<a href="/fcuser/logout" class="btn btn-primary">로그아웃</a>
+	{% else %}
+	<a href="/fcuser/login" class="btn btn-primary">로그인</a>
+	{% endif %}
+</div>
+{% endblock %}
