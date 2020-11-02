@@ -26,7 +26,9 @@
 				<input type="password" class="form-control" id="re-password" name="re-password" placeholder="비밀번호 확인">
 			</div>
 			<!-- 비밀번호 미 일치 -->
-			<p>{{ error }}</p>
+			{% if error %}
+				<p>{{ error }}</p>
+			{% endif %}
 			<button type="submit" class="btn btn-primary">등록</button>
 		</form>
 	</div>

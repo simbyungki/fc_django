@@ -20,6 +20,7 @@ class LoginForm(forms.Form) :
 		password = cleaned_data.get('password')
 
 		if username and password :
+			# fcuser = Fcuser.objects.get()
 			fcuser = Fcuser.objects.get(username=username)
 			if not check_password(password, fcuser.password) :
 				self.add_error('password', '비밀번호를 확인해주세요.')
